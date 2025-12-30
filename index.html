@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Recommender</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        line-height: 1.6;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      .skill-group {
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      .skill-item {
+        margin: 10px 0;
+      }
+
+      label {
+        display: inline-block;
+        width: 200px;
+      }
+
+      select {
+        padding: 5px;
+        width: 60px;
+      }
+
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 20px 0;
+      }
+
+      button:hover {
+        background: #45a049;
+      }
+
+      .results {
+        margin-top: 30px;
+        display: none;
+      }
+
+      .job-list,
+      .traits-list {
+        margin-bottom: 20px;
+      }
+
+      .job-item,
+      .trait-item {
+        padding: 8px;
+        margin: 5px 0;
+        background: #f9f9f9;
+        border-left: 3px solid #4caf50;
+      }
+
+      .loading {
+        text-align: center;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Job Recommendation System</h1>
+
+    <div class="skill-group">
+      <h3>Technical Skills</h3>
+
+      <div class="skill-item">
+        <label for="skill0">Programming:</label>
+        <select id="skill0">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <div class="skill-item">
+        <label for="skill1">Database Management:</label>
+        <select id="skill1">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <div class="skill-item">
+        <label for="skill2">Networking:</label>
+        <select id="skill2">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <div class="skill-item">
+        <label for="skill3">Cybersecurity:</label>
+        <select id="skill3">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <div class="skill-item">
+        <label for="skill4">Data Analysis:</label>
+        <select id="skill4">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <div class="skill-item">
+        <label for="skill5">Machine Learning/AI:</label>
+        <select id="skill5">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <div class="skill-item">
+        <label for="skill6">Web Development:</label>
+        <select id="skill6">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <div class="skill-item">
+        <label for="skill7">System Administration:</label>
+        <select id="skill7">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <div class="skill-item">
+        <label for="skill8">Cloud Computing:</label>
+        <select id="skill8">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <div class="skill-item">
+        <label for="skill9">Software Testing/QA:</label>
+        <select id="skill9">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>Soft Skills</h3>
+
+      <div class="skill-item">
+        <label for="skill10">Critical Thinking:</label>
+        <select id="skill10">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <div class="skill-item">
+        <label for="skill11">Problem Solving:</label>
+        <select id="skill11">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <div class="skill-item">
+        <label for="skill12">Communication:</label>
+        <select id="skill12">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <div class="skill-item">
+        <label for="skill13">Teamwork:</label>
+        <select id="skill13">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <div class="skill-item">
+        <label for="skill14">Adaptability:</label>
+        <select id="skill14">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+    </div>
+
+    <button id="recommendBtn">Get Job Recommendations</button>
+
+    <div class="loading" id="loading">Getting recommendations...</div>
+
+    <div class="results" id="results">
+      <h2>Your Results</h2>
+
+      <div class="job-list">
+        <h3>Top 5 Job Matches:</h3>
+        <div id="jobList"></div>
+      </div>
+
+      <div class="traits-list">
+        <h3>Your Soft Skills Profile:</h3>
+        <div id="traitsList"></div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("recommendBtn")
+        .addEventListener("click", function () {
+          // Show loading
+          document.getElementById("loading").style.display = "block";
+          document.getElementById("results").style.display = "none";
+
+          // Collect all skill ratings
+          const skills = [];
+          for (let i = 0; i < 15; i++) {
+            const skillValue = parseInt(
+              document.getElementById("skill" + i).value
+            );
+            skills.push(skillValue);
+          }
+
+          // Call the API
+          fetch("http://localhost:5000/recommend", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ skills: skills }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              // Hide loading
+              document.getElementById("loading").style.display = "none";
+
+              // Display results
+              displayResults(data);
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              document.getElementById("loading").style.display = "none";
+              alert(
+                "Error getting recommendations. Make sure the API is running."
+              );
+            });
+        });
+
+      function displayResults(data) {
+        // Display job recommendations
+        const jobList = document.getElementById("jobList");
+        jobList.innerHTML = "";
+
+        data.top_5_jobs.forEach((job) => {
+          const jobItem = document.createElement("div");
+          jobItem.className = "job-item";
+          jobItem.innerHTML = `<strong>${job.job}</strong> - ${(
+            job.probability * 100
+          ).toFixed(1)}% match`;
+          jobList.appendChild(jobItem);
+        });
+
+        // Display soft traits
+        const traitsList = document.getElementById("traitsList");
+        traitsList.innerHTML = "";
+
+        for (const [trait, rating] of Object.entries(data.soft_traits)) {
+          const traitItem = document.createElement("div");
+          traitItem.className = "trait-item";
+          traitItem.innerHTML = `<strong>${trait}</strong>: ${rating}/5`;
+          traitsList.appendChild(traitItem);
+        }
+
+        // Show results section
+        document.getElementById("results").style.display = "block";
+      }
+    </script>
+  </body>
+</html>

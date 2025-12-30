@@ -1,0 +1,10 @@
+[03-Nov-2025 02:27:19 Europe/Berlin] PHP Warning:  include(../backend/php/database.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\jft\frontend\api\filterJobs.php on line 9
+[03-Nov-2025 02:27:19 Europe/Berlin] PHP Warning:  include(): Failed opening '../backend/php/database.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\jft\frontend\api\filterJobs.php on line 9
+[03-Nov-2025 02:27:19 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\jft\frontend\api\filterJobs.php on line 32
+[03-Nov-2025 02:27:19 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\xampp\htdocs\jft\frontend\api\filterJobs.php:32
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\jft\frontend\api\filterJobs.php on line 32
+[03-Nov-2025 02:28:25 Europe/Berlin] Looking for jobs matching: Web Developer, IT Support Specialist, Software Developer, AI/Machine Learning Engineer, Cybersecurity Specialist
+[03-Nov-2025 02:28:25 Europe/Berlin] Total job postings found: 0
+[03-Nov-2025 02:28:25 Europe/Berlin] Total matches found: 0

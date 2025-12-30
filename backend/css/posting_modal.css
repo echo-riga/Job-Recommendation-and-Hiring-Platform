@@ -1,0 +1,228 @@
+.jobpost-modal-overlay {
+    display: none; 
+    position: fixed;
+    z-index: 1050; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    justify-content: center; 
+    align-items: center; 
+    overflow-y: auto; 
+}
+
+.jobpost-modal-content {
+    background-color: #fefefe;
+    padding: 20px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+
+    width: 90%;
+    max-width: 1200px;   
+    height: auto;
+    max-height: 95vh; 
+    
+    display: flex;
+    flex-direction: column; 
+    overflow-y: auto;
+}
+
+
+.jobpost-modal-header {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0; 
+}
+
+.jobpost-modal-header h2 {
+    color: #270E6A; 
+    font-weight: 600;
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.jobpost-close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.jobpost-close-btn:hover,
+.jobpost-close-btn:focus {
+    color: #333;
+}
+
+.jobpost-modal-body {
+    flex-grow: 1; 
+    overflow-y: auto;
+    padding-right: 15px; 
+    padding-bottom: 15px;
+}
+
+
+
+.jobpost-layout-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.jobpost-top-div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.jobpost-top-div .jobpost-span-2 {
+    grid-column: span 2 / auto;
+}
+
+.jobpost-bottom-div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+}
+
+.jobpost-bottom-div .jobpost-form-group {
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+}
+
+.jobpost-bottom-div .jobpost-form-group textarea {
+    flex-grow: 1; 
+}
+
+
+@media (max-width: 768px) {
+    .jobpost-top-div,
+    .jobpost-bottom-div {
+        grid-template-columns: 1fr; 
+    }
+
+    .jobpost-top-div .jobpost-span-2 {
+        grid-column: span 1 / auto;
+    }
+}
+
+
+.jobpost-form-group {
+    margin-bottom: 5px;
+}
+
+.jobpost-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+    flex-shrink: 0; 
+}
+
+.jobpost-form-group input,
+.jobpost-form-group select,
+.jobpost-form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #317cfe;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #333;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    cursor: default;
+    font-family: 'Inter', sans-serif;
+    height: auto;
+    resize: none;
+}
+
+.jobpost-form-group textarea {
+    resize: vertical;
+    min-height: 150px; 
+}
+
+.jobpost-form-group input:focus,
+.jobpost-form-group select:focus,
+.jobpost-form-group textarea:focus {
+    border-color: #270E6A;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 35, 102, 0.1);
+}
+
+.jobpost-modal-footer {
+    padding: 20px 0 20PX 0;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end; 
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.jobpost-modal-footer button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    min-width: 100px;
+}
+
+.jobpost-modal-footer .btn-cancel {
+    background-color: #e0e0e0;
+    color: #555;
+}
+
+.jobpost-modal-footer .btn-cancel:hover {
+    background-color: #d0d0d0;
+}
+
+.jobpost-modal-footer .btn-post {
+    background-color: #270E6A; 
+    color: white;
+}
+
+.jobpost-modal-footer .btn-post:hover {
+    background-color: #001a4d; 
+}
+
+.jobpost-quill-group {
+    margin-bottom: 25px; 
+    display: block; 
+}
+
+.jobpost-quill-group .ql-toolbar.ql-snow {
+    border: 1px solid #317cfe; 
+    border-bottom: 1px solid #eee; 
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-color: #fcfcfc;
+}
+
+.jobpost-quill-group .ql-container.ql-snow {
+    border: 1px solid #317cfe; 
+    border-top: none; 
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background-color: #ffffff;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    min-height: 150px;
+    height: auto; 
+}
+
+.jobpost-quill-group .ql-editor {
+    min-height: 150px; 
+    padding: 12px 15px;
+    box-sizing: border-box; 
+    max-height: 150px;
+    overflow-y: auto !important; 
+    height: auto; 
+}
