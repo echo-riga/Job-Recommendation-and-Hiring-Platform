@@ -1,12 +1,12 @@
 # Job Recommendation and Hiring Platform
 
-## 📌 Overview
+##  Overview
 
 Website platform with C4.5 decision tree-based job recommendations through assessments and integrated hiring analytics. Combines AI-powered job matching with comprehensive hiring management.
 
 ---
 
-## ✨ Features
+##  Features
 
 - Job applications with resume upload
 - C4.5 decision tree assessment for job fit recommendations
@@ -17,7 +17,7 @@ Website platform with C4.5 decision tree-based job recommendations through asses
 
 ---
 
-## 🖼️ Screenshots
+##  Screenshots
 
 <p align="center">
   <img src="screenshots/screenshot1.png" width="32%" />
@@ -35,7 +35,7 @@ Website platform with C4.5 decision tree-based job recommendations through asses
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Component    | Technology         |
 | ------------ | ------------------ |
